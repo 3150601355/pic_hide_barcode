@@ -19,18 +19,21 @@ Here are quotes discussing different input methods:
 
 ### Quotes about Input Methods:
 
-1. **Using QR code path directly:**  
+1. **General input / ouput path:**
+   ```--imgPutongPath "path/to/Basepic.jpg"``` or ```-pin "path/to/Basepic.jpg"```
+   ```--imgOutputPath "path/to/Outputpic.jpg"``` or ```-pout "path/to/Putputpic.jpg"```  
+3. **Using QR code path directly (Only available when not using link):**  
    ```--imgBarcodePath "path/to/QRcode.jpg"``` or ```-qrin "path/to/QRcode.jpg"```  
    "By providing the path to your QR code image directly, you can seamlessly integrate it into your base picture."
 
-2. **Using a link to generate QR code:**  
+4. **Using a link to generate QR code:**  
    ```--link "your-link-here"``` or ```-l "your-link-here"```  
    "With the ability to generate a QR code from a provided link, you can dynamically incorporate relevant URLs into your images."
 
-3. **Fine-tuning position and mode:**  
-   ```--anchor_x x_value``` or ```-x x_value```  
-   ```--anchor_y y_value``` or ```-y y_value```  
-   ```--mode mode_value``` or ```-mode mode_value```  
+5. **Fine-tuning position and mode:**  
+   ```--anchor_x x_value``` or ```-x x_value```  (Requires anchor_y to be set)
+   ```--anchor_y y_value``` or ```-y y_value```  (Requires anchor_x to be set)
+   ```--mode mode_value``` or ```-mode mode_value```  (No need for this if you have already set the anchor_x and anchor_y
    "Adjusting the anchor position and mode allows for precise placement and alignment of the QR code within your image."
 
 
