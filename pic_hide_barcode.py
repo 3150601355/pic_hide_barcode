@@ -1,5 +1,5 @@
 from PIL import Image   # 若提示No module named 'PIL'，则：pip install Pillow
-import qrcode
+import qrcode   # 若提示No module named 'qrcode'，则：pip install qrcode
 import argparse
 
 
@@ -98,8 +98,6 @@ def detect_lightest_region(imgPutong, imgBarcode, mode):
 
 
 def Link_input(link, imgPutongPath = "./普通图片.jpg", imgBarcodePath="./二维码.jpg", anchor_y=None, anchor_x=None, imgOutputPath = "./合成图片.png", mode = 0):
-    # 打开两张素材图片，其中二维码背景为白色。
-    # 注意：为了代码简洁，这两张图的分辨率必需要是相同的。
     imgPutong = Image.open("普通图片.jpg")
     if imgPutong.height >= 1000:
         qrcode.make(link, box_size=10, border=0).save("二维码.jpg")
@@ -145,7 +143,7 @@ def Link_input(link, imgPutongPath = "./普通图片.jpg", imgBarcodePath="./二
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Process some integers and comments.')
+    parser = argparse.ArgumentParser(description='Input additional params for your picture or utilize the \'link\' mode')
     parser.add_argument('--link', '-l', type=str, help='Your link')
     parser.add_argument('--imgPutongPath', '-pin', type=str, help='Path of the base picture ex) ./普通图片.jpg')
     parser.add_argument('--imgBarcodePath', '-qrin', type=str, help='Path of the QR code. ex) ./二维码.jpg')
