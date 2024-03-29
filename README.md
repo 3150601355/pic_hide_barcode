@@ -19,6 +19,10 @@ Here are quotes discussing different input methods:
 
 ### Quotes about Input Methods:
 
+#### Basic Usage:
+
+```python pic_hide_barcode.py```
+
 1. **General input / ouput path:**
    
    ```--imgPutongPath "path/to/Basepic.jpg"``` or ```-pin "path/to/Basepic.jpg"```
