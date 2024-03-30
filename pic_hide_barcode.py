@@ -97,12 +97,15 @@ def detect_lightest_region(imgPutong, imgBarcode, mode):
     return find_max_subarray(arr, imgBarcode.width, imgBarcode.height, mode)
 
 
-def Link_input(link, imgPutongPath = "./普通图片.jpg", imgBarcodePath="./二维码.jpg", anchor_y=None, anchor_x=None, imgOutputPath = "./合成图片.png", mode = 0):
+def Link_input(link, imgPutongPath = "./普通图片.jpg", imgBarcodePath="./二维码.jpg", anchor_y=None, anchor_x=None, imgOutputPath = "./合成图片.png", mode = 0, dimensions=None):
     imgPutong = Image.open(imgPutongPath)
-    if imgPutong.height >= 1000:
-        qrcode.make(link, box_size=10, border=0).save("二维码.jpg")
+    if dimensions is None:
+        if imgPutong.height >= 1000:
+            qrcode.make(link, box_size=10, border=0).save("二维码.jpg")
+        else:
+            qrcode.make(link, box_size=5, border=0).save("二维码.jpg")
     else:
-        qrcode.make(link, box_size=5, border=0).save("二维码.jpg")
+        qrcode.make(link, box_size=dimensions, border=0).save("二维码.jpg")
     imgBarcode = Image.open(imgBarcodePath)
 
     imgBarcode = imgBarcode.convert("RGBA")
@@ -151,6 +154,7 @@ if __name__ == '__main__':
     parser.add_argument('--anchor_x', '-x', type=int, help='QR code anchor position of width')
     parser.add_argument('--anchor_y', '-y', type=int, help='QR code anchor position of height')
     parser.add_argument('--mode', '-mode', type=int, help='QR code position mode, 0 for first position, 1 for last position')
+    parser.add_argument('--dimensions', '-d', type=int, help='QR code size')
 
     args = parser.parse_args()
 
