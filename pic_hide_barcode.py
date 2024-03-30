@@ -6,8 +6,8 @@ import argparse
 def Normal_input(imgPutongPath = "./普通图片.jpg", imgBarcodePath="./二维码.jpg", imgOutputPath = "./合成图片.png"):
     # 打开两张素材图片，其中二维码背景为白色。
     # 注意：为了代码简洁，这两张图的分辨率必需要是相同的。
-    imgPutong = Image.open("普通图片.jpg")
-    imgBarcode = Image.open("二维码.jpg")
+    imgPutong = Image.open(imgPutongPath)
+    imgBarcode = Image.open(imgBarcodePath)
 
     imgBarcode = imgBarcode.convert("RGBA")
 
@@ -34,7 +34,7 @@ def Normal_input(imgPutongPath = "./普通图片.jpg", imgBarcodePath="./二维�
                                           alpha) )
 
     # 保存图片
-    imgMix.save("./合成图片.png")
+    imgMix.save(imgOutputPath)
     print("生成完毕，快去群里浪吧")
 
 
@@ -98,12 +98,12 @@ def detect_lightest_region(imgPutong, imgBarcode, mode):
 
 
 def Link_input(link, imgPutongPath = "./普通图片.jpg", imgBarcodePath="./二维码.jpg", anchor_y=None, anchor_x=None, imgOutputPath = "./合成图片.png", mode = 0):
-    imgPutong = Image.open("普通图片.jpg")
+    imgPutong = Image.open(imgPutongPath)
     if imgPutong.height >= 1000:
         qrcode.make(link, box_size=10, border=0).save("二维码.jpg")
     else:
         qrcode.make(link, box_size=5, border=0).save("二维码.jpg")
-    imgBarcode = Image.open("二维码.jpg")
+    imgBarcode = Image.open(imgBarcodePath)
 
     imgBarcode = imgBarcode.convert("RGBA")
 
@@ -138,7 +138,7 @@ def Link_input(link, imgPutongPath = "./普通图片.jpg", imgBarcodePath="./二
                 imgMix.putpixel((w, h), (pxlPutong[0], pxlPutong[1], pxlPutong[2], 255))
 
     # 保存图片
-    imgMix.save("./合成图片.png")
+    imgMix.save(imgOutputPath)
     print("生成完毕，快去群里浪吧")
 
 
