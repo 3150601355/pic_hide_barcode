@@ -14,6 +14,7 @@ hide barcode in a picture. 在一张普通图片里隐藏二维码，可以被�
   - anchor_x: the x position of your QR code on the picture (Only when using link)
   - anchor_y: the y position of your QR code on the picture (Only when using link)
   - mode: alternative modes in positioning the QR code (Only when using link)
+  - dimensions: dimension of your QR code on the picture (Only when using link)
 
 Here are quotes discussing different input methods:
 
