@@ -27,7 +27,7 @@ Here are quotes discussing different input methods:
    
    ```--imgPutongPath "path/to/Basepic.jpg"``` or ```-pin "path/to/Basepic.jpg"```
    
-   ```--imgOutputPath "path/to/Outputpic.jpg"``` or ```-pout "path/to/Putputpic.jpg"```  
+   ```--imgOutputPath "path/to/Outputpic.jpg"``` or ```-pout "path/to/Outputpic.jpg"```  
 2. **Using QR code path directly (Only available when not using link):**
    
    ```--imgBarcodePath "path/to/QRcode.jpg"``` or ```-qrin "path/to/QRcode.jpg"```
@@ -39,10 +39,12 @@ Here are quotes discussing different input methods:
    
    "With the ability to generate a QR code from a provided link, you can dynamically incorporate relevant URLs into your images."
 
-4. **Fine-tuning position and mode:**  
+4. **Fine-tuning position, size, and mode:**  
    ```--anchor_x x_value``` or ```-x x_value```  (Requires anchor_y to be set)
    
    ```--anchor_y y_value``` or ```-y y_value```  (Requires anchor_x to be set)
+
+   ```--dimensions side_length``` or ```-d side_length```  (Alters dimension of the QR code)
    
    ```--mode mode_value``` or ```-mode mode_value```  (No need for this if you have already set the anchor_x and anchor_y)
    
